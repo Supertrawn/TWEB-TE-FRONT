@@ -14,8 +14,6 @@ var app = new Vue({
   }
 });
 
-
-
 /* non plus
 var films = null;
 getfilmsJson().then(url, function (data) {
@@ -37,6 +35,12 @@ console.log(getfilmsJson().then(movies => movies.results).then(results => result
 
 console.log("coucou");
 
+var truc = getfilmsJson();
+truc.then(function(result){
+  console.log(result)
+})
+
+console.log(truc);
 
 app.message = "hoo tristesse, impossible de faire quoique ce soit avec ce json...";
 
