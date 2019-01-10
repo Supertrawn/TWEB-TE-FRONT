@@ -1,7 +1,9 @@
 //API KEY: f1be4bafe6f7cb0cb84f5948c5b75497
+var url ="https://api.themoviedb.org/3/movie/popular?page=1&api_key=f1be4bafe6f7cb0cb84f5948c5b75497";
 
 function getfilmsJson(){
-  return fetch(`https://api.themoviedb.org/3/movie/popular?page=1&api_key=f1be4bafe6f7cb0cb84f5948c5b75497`)
+  //me rappel plus de ce que fait le fetch exactement... du coup je suis pas sûr qu'il me resort le json correctement
+  return fetch(url)
     .then(res => res.json)
 }
 
@@ -12,13 +14,34 @@ var app = new Vue({
   }
 });
 
-console.log(getfilmsJson().then(movies => movies));
 
+
+/* non plus
+var films = null;
+getfilmsJson().then(url, function (data) {
+    alert(data);
+    films = data;
+    alert(films);
+});
+console.log(films);*/
+
+/* non plus 
+function getresult(){
+  getfilmsJson().results.then(rest => result)
+}*/
+
+/* non
+console.log(getfilmsJson().then(movies => movies.results).then(results => results[0]).then(zero => zero.title));
+*/
 //normalement un json on le lit comme ça non : movies.title par exemple 
 
 console.log("coucou");
 
+
 app.message = "hoo tristesse, impossible de faire quoique ce soit avec ce json...";
+
+//ça ne marche toujours pas
+//app.message = getfilmsJson().then(json => json.total_results);
 
 /*Alors si j'avais réussis a faire quelque chose avec ce JSON.
   j'aurai commencer par faire une liste comme je peux en utilisant les component de vue 
