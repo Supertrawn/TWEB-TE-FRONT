@@ -14,6 +14,8 @@ var app = new Vue({
 
 console.log(getfilmsJson().then(movies => movies));
 
+//normalement un json on le lit comme ça non : movies.title par exemple 
+
 console.log("coucou");
 
 app.message = "hoo tristesse, impossible de faire quoique ce soit avec ce json...";
